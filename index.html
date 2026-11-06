@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#030814" />
+<title>The Lord of the Rings — Enter Middle-earth</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body data-scene="shire">
+
+<canvas id="fx" aria-hidden="true"></canvas>
+<div class="vignette" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<main class="deck" id="deck">
+
+  <!-- ============================================================
+       SLIDE 1 — ENTER MIDDLE-EARTH
+       ============================================================ -->
+  <section class="slide is-active" data-scene="shire" aria-hidden="false">
+    <div class="scene">
+      <svg class="art" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="s1sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0"   stop-color="#01050f"/>
+            <stop offset=".45" stop-color="#08203f"/>
+            <stop offset="1"   stop-color="#153a63"/>
+          </linearGradient>
+          <radialGradient id="s1moon">
+            <stop offset="0"   stop-color="#ffffff"/>
+            <stop offset=".4"  stop-color="#cfe6ff" stop-opacity=".45"/>
+            <stop offset="1"   stop-color="#bfe3ff" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="s1far" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#274a78"/><stop offset="1" stop-color="#102444"/>
+          </linearGradient>
+          <linearGradient id="s1mid" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#1a3a60"/><stop offset="1" stop-color="#0a1a33"/>
+          </linearGradient>
+          <linearGradient id="s1near" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#0e2545"/><stop offset="1" stop-color="#030814"/>
+          </linearGradient>
+          <radialGradient id="s1door">
+            <stop offset="0" stop-color="#e8f4ff" stop-opacity=".85"/>
+            <stop offset="1" stop-color="#e8f4ff" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <rect width="1920" height="1080" fill="url(#s1sky)"/>
+
+        <g fill="#e8f4ff" opacity=".75">
+          <circle cx="180" cy="150" r="2"/><circle cx="420" cy="90" r="1.6"/>
+          <circle cx="660" cy="200" r="1.8"/><circle cx="940" cy="120" r="2.2"/>
+          <circle cx="1180" cy="230" r="1.5"/><circle cx="150" cy="330" r="1.4"/>
+          <circle cx="1780" cy="180" r="2"/><circle cx="820" cy="300" r="1.6"/>
+          <circle cx="1320" cy="90" r="1.7"/><circle cx="1680" cy="330" r="1.5"/>
+        </g>
+
+        <circle cx="1520" cy="230" r="360" fill="url(#s1moon)"/>
+        <circle cx="1520" cy="230" r="84" fill="#f4faff"/>
+        <circle cx="1494" cy="206" r="15" fill="#d4e6f7" opacity=".5"/>
+        <circle cx="1552" cy="256" r="10" fill="#d4e6f7" opacity=".4"/>
+
+        <g class="clouds" fill="#a8c9e8" opacity=".18">
+          <ellipse cx="420" cy="250" rx="300" ry="30"/>
+          <ellipse cx="900" cy="170" rx="220" ry="22"/>
+          <ellipse cx="1400" cy="360" rx="340" ry="26"/>
+        </g>
+
+        <g class="px" data-depth="0.35">
+          <path d="M0 640 L180 470 L330 570 L480 400 L630 550 L780 430 L930 570 L1080 450 L1240 580 L1400 470 L1580 600 L1740 480 L1920 610 L1920 1080 L0 1080 Z"
+                fill="url(#s1far)"/>
+        </g>
+
+        <g class="px" data-depth="0.6">
+          <path d="M0 760 Q240 640 480 720 T960 700 T1440 720 T1920 680 L1920 1080 L0 1080 Z"
+                fill="url(#s1mid)"/>
+        </g>
+
+        <g class="px" data-depth="1">
+          <path d="M0 900 Q320 800 640 880 T1280 870 T1920 840 L1920 1080 L0 1080 Z"
+                fill="url(#s1near)"/>
+          <circle cx="430" cy="950" r="130" fill="url(#s1door)"/>
+          <circle cx="430" cy="950" r="62" fill="#071629" stroke="#bfe3ff" stroke-width="5" opacity=".9"/>
+          <circle cx="430" cy="950" r="9" fill="#e8f4ff"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="content content--center">
+      <p class="eyebrow reveal" style="--d:.10s">Enter Middle-earth</p>
+
+      <h1 class="title reveal" style="--d:.28s">
+        The Lord<br /><span class="gold">of the</span> Rings
+      </h1>
+
+      <div class="ring-mark reveal" style="--d:.62s" aria-hidden="true">
+        <svg viewBox="0 0 120 120">
+          <defs>
+            <linearGradient id="rmSilver" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0"   stop-color="#ffffff"/>
+              <stop offset=".45" stop-color="#bfe3ff"/>
+              <stop offset="1"   stop-color="#5b8fc0"/>
+            </linearGradient>
+          </defs>
+          <circle class="rm-dash" cx="60" cy="60" r="43"/>
+          <circle class="rm-ring" cx="60" cy="60" r="31"/>
+        </svg>
+      </div>
+
+      <p class="subtitle reveal" style="--d:.86s">A journey of friendship, courage and hope.</p>
+
+      <p class="epigraph reveal" style="--d:1.04s">
+        Three Rings for the Elven-kings under the sky,<br />
+        Seven for the Dwarf-lords in their halls of stone,<br />
+        Nine for Mortal Men doomed to die,<br />
+        One for the Dark Lord on his dark throne.
+      </p>
+
+      <p class="note reveal" style="--d:1.32s">One ring. One journey. A world waiting to be saved.</p>
+      <p class="signature reveal" style="--d:1.48s">J. R. R. Tolkien · 1954–1955</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SLIDE 2 — THE MYSTERIOUS RING
+       ============================================================ -->
+  <section class="slide" data-scene="ring" aria-hidden="true">
+    <div class="scene">
+      <svg class="art" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="s2bg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#020612"/>
+            <stop offset=".6" stop-color="#08182f"/>
+            <stop offset="1" stop-color="#0e2545"/>
+          </linearGradient>
+          <radialGradient id="s2ember">
+            <stop offset="0" stop-color="#d9efff" stop-opacity=".38"/>
+            <stop offset=".55" stop-color="#3a6fa8" stop-opacity=".14"/>
+            <stop offset="1" stop-color="#000" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="s2pillar" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#0f2644"/><stop offset="1" stop-color="#030814"/>
+          </linearGradient>
+        </defs>
+
+        <rect width="1920" height="1080" fill="url(#s2bg)"/>
+        <ellipse cx="1180" cy="640" rx="760" ry="460" fill="url(#s2ember)"/>
+
+        <g class="px" data-depth="0.4" fill="url(#s2pillar)">
+          <rect x="0"    y="0" width="230" height="1080"/>
+          <rect x="1690" y="0" width="230" height="1080"/>
+          <path d="M0 120 L230 40 L230 0 L0 0 Z"/>
+        </g>
+
+        <g class="smoke" fill="#3d6d9e" opacity=".20" filter="blur(40px)">
+          <ellipse cx="420"  cy="780" rx="420" ry="140"/>
+          <ellipse cx="1250" cy="850" rx="520" ry="160"/>
+          <ellipse cx="860"  cy="940" rx="600" ry="170"/>
+        </g>
+
+        <g class="px" data-depth="0.9">
+          <path d="M0 980 Q480 920 960 970 T1920 940 L1920 1080 L0 1080 Z" fill="#020610"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="content content--split">
+      <div class="col col--text">
+        <p class="eyebrow reveal" style="--d:.10s">Chapter II</p>
+        <h2 class="title title--md reveal" style="--d:.24s">
+          The Power of <span class="gold">One Ring</span>
+        </h2>
+        <p class="subtitle reveal" style="--d:.42s">“Not all treasures bring happiness.”</p>
+
+        <p class="body reveal" style="--d:.60s">
+          Frodo Baggins is a young hobbit living peacefully in the Shire. One day, he discovers
+          that the ring he received from his uncle Bilbo is no ordinary object. It is the
+          <em class="gold">One Ring</em>, created by the dark lord <em class="gold">Sauron</em>
+          to control Middle-earth.
+        </p>
+
+        <p class="body reveal" style="--d:.78s">
+          Forged in secret in the fires of Mount Doom, the ring carries a piece of Sauron's own
+          malice. It whispers to those who hold it. It bends them, slowly, toward its master's will.
+        </p>
+
+        <div class="tags reveal" style="--d:.96s" aria-label="Ring traits">
+          <span class="tag">Forged in secret</span>
+          <span class="tag">Bound to Sauron</span>
+          <span class="tag">Seeks its master</span>
+        </div>
+      </div>
+
+      <div class="col col--art">
+        <div class="ring-hero reveal" style="--d:.30s">
+          <figure class="photo-card photo-card--orbit">
+            <img
+              src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&q=80"
+              alt="The Misty Mountains under starlight" loading="lazy" />
+          </figure>
+
+          <div class="ring-stage" aria-hidden="true">
+            <svg viewBox="0 0 240 240">
+              <defs>
+                <linearGradient id="ringSilver" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0"   stop-color="#ffffff"/>
+                  <stop offset=".35" stop-color="#cfe6ff"/>
+                  <stop offset=".65" stop-color="#5b8fc0"/>
+                  <stop offset="1"   stop-color="#e8f4ff"/>
+                </linearGradient>
+                <radialGradient id="ringHalo">
+                  <stop offset="0" stop-color="#d9efff" stop-opacity=".55"/>
+                  <stop offset="1" stop-color="#d9efff" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+
+              <circle cx="120" cy="120" r="118" fill="url(#ringHalo)"/>
+              <circle class="ring-outer" cx="120" cy="120" r="106"/>
+              <circle class="ring-band"  cx="120" cy="120" r="88"/>
+              <circle class="ring-shine" cx="120" cy="120" r="88"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SLIDE 3 — THE FELLOWSHIP
+       ============================================================ -->
+  <section class="slide" data-scene="journey" aria-hidden="true">
+    <div class="scene">
+      <svg class="art" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="s3sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0"   stop-color="#020613"/>
+            <stop offset=".5"  stop-color="#0b2444"/>
+            <stop offset="1"   stop-color="#2f5a8a"/>
+          </linearGradient>
+          <linearGradient id="s3peak" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#5c85ad"/><stop offset=".55" stop-color="#1a3a5e"/>
+            <stop offset="1" stop-color="#08172b"/>
+          </linearGradient>
+          <linearGradient id="s3snow" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#c9dff2" stop-opacity="0"/>
+          </linearGradient>
+          <radialGradient id="s3haze">
+            <stop offset="0" stop-color="#bfe3ff" stop-opacity=".22"/>
+            <stop offset="1" stop-color="#bfe3ff" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <rect width="1920" height="1080" fill="url(#s3sky)"/>
+        <circle cx="960" cy="820" r="640" fill="url(#s3haze)"/>
+
+        <g class="px" data-depth="0.35">
+          <path d="M0 700 L240 420 L420 600 L660 340 L880 580 L1120 400 L1340 600 L1560 430 L1800 620 L1920 520 L1920 1080 L0 1080 Z"
+                fill="url(#s3peak)"/>
+          <path d="M240 420 L300 490 L178 490 Z" fill="url(#s3snow)"/>
+          <path d="M660 340 L724 424 L596 424 Z" fill="url(#s3snow)"/>
+          <path d="M1120 400 L1176 470 L1064 470 Z" fill="url(#s3snow)"/>
+          <path d="M1560 430 L1618 502 L1502 502 Z" fill="url(#s3snow)"/>
+        </g>
+
+        <g class="mist" fill="#a9c9e8" opacity=".12" filter="blur(26px)">
+          <ellipse cx="500"  cy="700" rx="520" ry="70"/>
+          <ellipse cx="1400" cy="760" rx="580" ry="80"/>
+        </g>
+
+        <g class="px" data-depth="0.95">
+          <path d="M0 900 Q360 810 740 880 T1440 870 T1920 840 L1920 1080 L0 1080 Z" fill="#06152a"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="content content--split">
+      <div class="col col--text">
+        <p class="eyebrow reveal" style="--d:.10s">Chapter III</p>
+        <h2 class="title title--md reveal" style="--d:.24s">The <span class="gold">Fellowship</span></h2>
+
+        <p class="body reveal" style="--d:.44s">
+          To destroy the ring, Frodo must travel to Mordor. He is joined by loyal friends and
+          brave companions — hobbits, a wizard, a ranger, an elf, and a dwarf.
+        </p>
+
+        <p class="body reveal" style="--d:.62s">
+          Nine walkers in all. Together they form the Fellowship of the Ring and begin a
+          dangerous journey across Middle-earth.
+        </p>
+
+        <div class="chips" aria-label="The Fellowship">
+          <span class="chip" style="--d:.78s">Frodo</span>
+          <span class="chip" style="--d:.86s">Sam</span>
+          <span class="chip" style="--d:.94s">Merry</span>
+          <span class="chip" style="--d:1.02s">Pippin</span>
+          <span class="chip" style="--d:1.10s">Gandalf</span>
+          <span class="chip" style="--d:1.18s">Aragorn</span>
+          <span class="chip" style="--d:1.26s">Boromir</span>
+          <span class="chip" style="--d:1.34s">Legolas</span>
+          <span class="chip" style="--d:1.42s">Gimli</span>
+        </div>
+      </div>
+
+      <div class="col col--art">
+        <div class="map-card reveal" style="--d:.36s">
+          <svg class="map" viewBox="0 0 400 300" aria-hidden="true">
+            <defs>
+              <linearGradient id="mapLand" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#14345a"/><stop offset="1" stop-color="#08182f"/>
+              </linearGradient>
+            </defs>
+
+            <rect width="400" height="300" fill="#061226" rx="10"/>
+
+            <path d="M40 40 q90 -14 150 18 t150 22 v190 q-120 14 -220 -6 T40 246 Z"
+                  fill="url(#mapLand)" stroke="#bfe3ff" stroke-opacity=".35" stroke-width="1.4"/>
+
+            <g stroke="#bfe3ff" stroke-opacity=".16" stroke-width="1" fill="none">
+              <path d="M40 100 H360"/><path d="M40 160 H360"/><path d="M40 220 H360"/>
+              <path d="M120 40 V260"/><path d="M220 40 V260"/><path d="M300 40 V260"/>
+            </g>
+
+            <path class="map-route" id="routePath"
+                  d="M78 238 C 130 226, 146 182, 196 168 S 268 126, 312 74"
+                  fill="none" stroke="#e8f4ff" stroke-width="2.6" stroke-linecap="round"
+                  stroke-dasharray="7 9"/>
+
+            <circle cx="78"  cy="238" r="5" fill="#ffffff"/>
+            <circle cx="312" cy="74"  r="5" fill="#bfe3ff"/>
+            <circle cx="312" cy="74"  r="11" fill="none" stroke="#bfe3ff" stroke-opacity=".55"/>
+
+            <circle class="map-light" r="4.5" fill="#ffffff">
+              <animateMotion dur="8s" repeatCount="indefinite">
+                <mpath href="#routePath"/>
+              </animateMotion>
+            </circle>
+
+            <text x="26" y="276" fill="#8fb2d4" font-size="10"
+                  font-family="Cinzel, serif" letter-spacing="3">MIDDLE-EARTH</text>
+          </svg>
+        </div>
+
+        <figure class="photo-card photo-card--wide reveal" style="--d:.60s">
+          <img
+            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80"
+            alt="Ancient forest on the road to Mordor" loading="lazy" />
+          <figcaption>The Long Road East</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SLIDE 4 — A JOURNEY OF FRIENDSHIP
+       ============================================================ -->
+  <section class="slide" data-scene="forest" aria-hidden="true">
+    <div class="scene">
+      <svg class="art" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="s4sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0"   stop-color="#020816"/>
+            <stop offset=".55" stop-color="#08203c"/>
+            <stop offset="1"   stop-color="#1c4472"/>
+          </linearGradient>
+          <radialGradient id="s4warm">
+            <stop offset="0" stop-color="#e8f4ff" stop-opacity=".55"/>
+            <stop offset="1" stop-color="#e8f4ff" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <rect width="1920" height="1080" fill="url(#s4sky)"/>
+
+        <g class="px" data-depth="0.4" fill="#0c2545">
+          <path d="M160 900 V420 h44 v480 Z"/><path d="M70 520 L182 320 L294 520 Z"/>
+          <path d="M520 920 V460 h48 v460 Z"/><path d="M428 560 L544 350 L660 560 Z"/>
+          <path d="M1420 920 V440 h46 v480 Z"/><path d="M1330 540 L1443 330 L1556 540 Z"/>
+          <path d="M1760 930 V470 h46 v460 Z"/><path d="M1670 560 L1783 350 L1896 560 Z"/>
+        </g>
+
+        <ellipse class="warm-glow" cx="960" cy="830" rx="520" ry="300" fill="url(#s4warm)"/>
+
+        <g class="px" data-depth="0.95">
+          <path d="M0 930 Q480 870 960 920 T1920 890 L1920 1080 L0 1080 Z" fill="#05101f"/>
+
+          <g class="walkers" fill="#030a17">
+            <ellipse cx="905" cy="962" rx="26" ry="38"/>
+            <circle  cx="905" cy="912" r="16"/>
+            <ellipse cx="985" cy="970" rx="24" ry="34"/>
+            <circle  cx="985" cy="926" r="14"/>
+          </g>
+          <circle cx="945" cy="900" r="7" fill="#e8f4ff" opacity=".9"/>
+        </g>
+
+        <g class="fog" fill="#b9d5ee" opacity=".10" filter="blur(30px)">
+          <ellipse cx="380"  cy="800" rx="560" ry="90"/>
+          <ellipse cx="1260" cy="870" rx="640" ry="100"/>
+          <ellipse cx="820"  cy="940" rx="700" ry="110"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="content content--narrow">
+      <p class="eyebrow reveal" style="--d:.10s">Chapter IV</p>
+      <h2 class="title title--md reveal" style="--d:.24s">A Journey of <span class="gold">Friendship</span></h2>
+
+      <p class="body reveal" style="--d:.44s">
+        The journey becomes harder as the ring slowly affects Frodo. The Fellowship eventually
+        separates, leaving Frodo and Sam to continue alone toward the Black Gate.
+      </p>
+
+      <p class="body reveal" style="--d:.62s">
+        Sam never abandons his friend — not when the road is dark, not when Frodo turns cold,
+        not even when everything seems impossible. He carries the small hope that Frodo cannot
+        carry alone.
+      </p>
+
+      <p class="body body--accent reveal" style="--d:.82s">
+        His loyalty gives Frodo the strength to keep going.
+      </p>
+
+      <figure class="photo-card photo-card--wide reveal" style="--d:1.04s">
+        <img
+          src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=1600&q=80"
+          alt="A misty forest path under starlight" loading="lazy" />
+        <figcaption>Two hobbits on the road to Mordor</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SLIDE 5 — THE FINAL JOURNEY
+       ============================================================ -->
+  <section class="slide" data-scene="battle" aria-hidden="true">
+    <div class="glowwash" aria-hidden="true"></div>
+
+    <div class="scene">
+      <svg class="art" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="s5sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0"   stop-color="#010510"/>
+            <stop offset=".5"  stop-color="#0b1d3a"/>
+            <stop offset="1"   stop-color="#1e4470"/>
+          </linearGradient>
+          <radialGradient id="s5lava">
+            <stop offset="0"   stop-color="#ffffff" stop-opacity=".85"/>
+            <stop offset=".28" stop-color="#cfe6ff" stop-opacity=".5"/>
+            <stop offset=".68" stop-color="#3a6fa8" stop-opacity=".2"/>
+            <stop offset="1"   stop-color="#000" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="s5rock" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#1a3454"/><stop offset="1" stop-color="#040a18"/>
+          </linearGradient>
+        </defs>
+
+        <rect width="1920" height="1080" fill="url(#s5sky)"/>
+        <ellipse cx="960" cy="640" rx="800" ry="480" fill="url(#s5lava)"/>
+
+        <g class="px" data-depth="0.4">
+          <path d="M0 700 L220 460 L340 620 L520 420 L640 640 L960 520 L1280 640 L1400 420 L1580 620 L1700 460 L1920 680 L1920 1080 L0 1080 Z"
+                fill="url(#s5rock)"/>
+        </g>
+
+        <path d="M700 1080 L960 470 L1220 1080 Z" fill="#0a1628"/>
+        <path d="M860 1080 L960 520 L1060 1080 Z" fill="#bfe3ff" opacity=".22"/>
+        <path d="M938 540 L982 540 L968 600 L952 600 Z" fill="#f4faff" opacity=".9"/>
+
+        <g class="plumes" fill="#6d94bd" opacity=".45" filter="blur(24px)">
+          <ellipse cx="960" cy="470" rx="90"  ry="46"/>
+          <ellipse cx="960" cy="470" rx="70"  ry="34"/>
+          <ellipse cx="960" cy="470" rx="110" ry="54"/>
+        </g>
+
+        <g class="px" data-depth="0.95">
+          <path d="M0 940 Q480 880 960 930 T1920 900 L1920 1080 L0 1080 Z" fill="#030912"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="content content--narrow">
+      <p class="eyebrow reveal" style="--d:.10s">Chapter V</p>
+      <h2 class="title title--md reveal" style="--d:.24s">The Final <span class="gold">Journey</span></h2>
+
+      <p class="body reveal" style="--d:.44s">
+        After many struggles, Frodo and Sam finally reach Mount Doom. The ring is destroyed
+        in the fire that forged it. Sauron's power crumbles into ash, and the Shadow lifts
+        from the world.
+      </p>
+
+      <p class="body reveal" style="--d:.62s">
+        Middle-earth is saved. The heroes survive — but they are changed forever by everything
+        they have seen and carried. Darkness disappears, and peace returns, quietly, at last.
+      </p>
+
+      <p class="closing reveal" style="--d:.86s">
+        Even the darkest night must end.
+      </p>
+
+      <figure class="photo-card photo-card--wide reveal" style="--d:1.06s">
+        <img
+          src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80"
+          alt="A cold mountain summit reaching into the sky" loading="lazy" />
+        <figcaption>Mount Doom · The End of All Things</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SLIDE 6 — THE MEANING BEHIND THE STORY
+       ============================================================ -->
+  <section class="slide" data-scene="dawn" aria-hidden="true">
+    <div class="scene">
+      <svg class="art" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="s6sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0"   stop-color="#020612"/>
+            <stop offset=".42" stop-color="#123259"/>
+            <stop offset=".74" stop-color="#4b7ba6"/>
+            <stop offset="1"   stop-color="#bcd9f2"/>
+          </linearGradient>
+          <radialGradient id="s6sun">
+            <stop offset="0"   stop-color="#ffffff"/>
+            <stop offset=".32" stop-color="#e1efff" stop-opacity=".65"/>
+            <stop offset="1"   stop-color="#bfe3ff" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="s6hill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#23486f"/><stop offset="1" stop-color="#091a30"/>
+          </linearGradient>
+          <radialGradient id="s6door">
+            <stop offset="0" stop-color="#e8f4ff" stop-opacity=".9"/>
+            <stop offset="1" stop-color="#e8f4ff" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <rect width="1920" height="1080" fill="url(#s6sky)"/>
+        <circle cx="960" cy="760" r="420" fill="url(#s6sun)"/>
+        <circle cx="960" cy="760" r="96" fill="#f4faff" opacity=".95"/>
+
+        <g class="px" data-depth="0.35">
+          <path d="M0 760 Q280 660 560 730 T1120 720 T1920 670 L1920 1080 L0 1080 Z" fill="url(#s6hill)"/>
+        </g>
+
+        <g class="px" data-depth="0.85">
+          <path d="M0 880 Q340 790 700 860 T1440 850 T1920 820 L1920 1080 L0 1080 Z" fill="#0c2340"/>
+          <circle cx="1480" cy="900" r="110" fill="url(#s6door)"/>
+          <circle cx="1480" cy="900" r="52" fill="#0a1f38" stroke="#bfe3ff" stroke-width="4" opacity=".9"/>
+        </g>
+
+        <g class="px" data-depth="1">
+          <path d="M0 980 Q420 930 900 985 T1920 960 L1920 1080 L0 1080 Z" fill="#050f20"/>
+        </g>
+
+        <g class="birds" stroke="#0e2646" stroke-width="3.4" fill="none" opacity=".5" stroke-linecap="round">
+          <path d="M0 0 q14 -11 28 0 q14 -11 28 0"/>
+          <path d="M62 30 q11 -9 22 0 q11 -9 22 0"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="content content--narrow">
+      <p class="eyebrow reveal" style="--d:.10s">Chapter VI</p>
+      <h2 class="title title--md reveal" style="--d:.24s">The Meaning Behind <span class="gold">the Story</span></h2>
+
+      <p class="body reveal" style="--d:.44s">
+        The Lord of the Rings is more than an adventure. It teaches us about loyalty, sacrifice,
+        friendship and hope — and reminds us that even an ordinary person can do something
+        extraordinary.
+      </p>
+
+      <p class="body reveal" style="--d:.62s">
+        Frodo shows us that small hands can carry heavy burdens. Sam reminds us that true
+        friendship means staying beside someone, even when life becomes difficult.
+      </p>
+
+      <blockquote class="quote reveal" style="--d:.82s">
+        “You don't have to be powerful to be a hero.<br />
+        Sometimes, the smallest people can change the world.”
+      </blockquote>
+
+      <figure class="photo-card photo-card--wide reveal" style="--d:1.06s">
+        <img
+          src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1600&q=80"
+          alt="Morning fog lifting over quiet hills" loading="lazy" />
+        <figcaption>The Shire · Where It All Began</figcaption>
+      </figure>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= HUD ================= -->
+<div class="top-right">
+  <button class="icon-btn" id="soundBtn" aria-label="Toggle ambient sound" title="Ambient sound">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path class="ico-on"  d="M4 9.5h3.4L12 5.6v12.8L7.4 14.5H4z"/>
+      <path class="ico-on"  d="M15.4 9.2a4 4 0 0 1 0 5.6"/>
+      <path class="ico-off" d="M16.2 9.5l5 5M21.2 9.5l-5 5" style="display:none"/>
+    </svg>
+  </button>
+
+  <button class="icon-btn" id="fullBtn" aria-label="Toggle fullscreen" title="Fullscreen">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/>
+    </svg>
+  </button>
+
+  <button class="notes-btn" id="notesToggle" aria-expanded="false" aria-label="Toggle speaker notes">
+    Notes <kbd>N</kbd>
+  </button>
+</div>
+
+<nav class="dots" id="dots" aria-label="Slide menu"></nav>
+
+<footer class="bottom">
+  <span class="counter" id="counter">01 / 06</span>
+
+  <div class="progress" role="progressbar" aria-valuemin="1" aria-valuemax="6" aria-valuenow="1">
+    <span class="progress__fill" id="progressFill"></span>
+  </div>
+
+  <div class="arrows">
+    <button class="arrow" id="prev" aria-label="Previous slide">‹</button>
+    <button class="arrow" id="next" aria-label="Next slide">›</button>
+  </div>
+</footer>
+
+<aside class="notes" id="notes" aria-live="polite">
+  <div class="notes__inner">
+    <p class="notes__label">Speaker Notes</p>
+    <p class="notes__body" id="notesBody"></p>
+  </div>
+</aside>
+
+<script src="script.js"></script>
+</body>
+        </html>
